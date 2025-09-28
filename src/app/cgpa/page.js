@@ -83,21 +83,16 @@ export default function Home() {
                         </tr>
                     </thead>
                     <tbody>
-                        {subjects.map((subject) => (
+                        {subjects.map((subject, idx) => (
                             <tr key={subject.id}>
                                 <td>
-                                    <input
-                                        type='text'
-                                        value={subject.name}
-                                        onChange={(e) =>
-                                            handleInputChange(
-                                                subject.id,
-                                                "name",
-                                                e.target.value
-                                            )
-                                        }
+                                    <p
+                                        className={styles.p}
+                                        value={idx}
                                         placeholder='Subject name'
-                                    />
+                                    >
+                                        {`${idx + 1}`}
+                                    </p>
                                 </td>
                                 <td>
                                     <input
